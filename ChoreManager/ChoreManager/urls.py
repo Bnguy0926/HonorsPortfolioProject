@@ -18,17 +18,17 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index_view, name='index'),
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     # URL patterns for User views
-    path('users/', views.user_list_view, name='user_list'),
-    path('users/<int:user_id>/', views.user_detail_view, name='user_detail'),
+    path('users/', views.user_list, name='user_list'),
+    path('users/<int:user_id>/', views.user_detail, name='user_detail'),
     
     # URL patterns for ChoreList views
-    path('chore-lists/', views.chore_list_view, name='chore_list'),
-    path('chore-lists/<int:list_id>/', views.chore_list_detail_view, name='chore_list_detail'),
+    path('chore-lists/', views.chore_lists, name='chore_list'),
+    path('chore-lists/<int:list_id>/', views.chore_list_detail, name='chore_list_detail'),
     
     # URL patterns for Chore views
-    path('chores/', views.chore_view, name='chore'),
-    path('chores/<int:chore_id>/', views.chore_detail_view, name='chore_detail')
+    path('chores/', views.chore, name='chore'),
+    path('chores/<int:chore_id>/', views.chore_detail, name='chore_detail')
 ]
